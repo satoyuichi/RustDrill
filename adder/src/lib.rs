@@ -12,10 +12,10 @@ mod tests {
         assert_eq!(result, 4);
     }
 
-    #[test]
-    fn another() {
-	panic!("Make this test fail");
-    }
+    // #[test]
+    // fn another() {
+    // 	panic!("Make this test fail");
+    // }
 
     #[test]
     fn larger_can_hold_smaller() {
@@ -45,10 +45,10 @@ mod tests {
 	assert!(!smaller.can_hold(&larger));
     }
 
-    #[test]
-    fn it_adds_two() {
-	assert_eq!(4, add_two(2));
-    }
+    // #[test]
+    // fn it_adds_two() {
+    // 	assert_eq!(4, add_two(2));
+    // }
 
     #[test]
     fn greeting_contains_name() {
@@ -84,7 +84,7 @@ pub fn add_two(a: i32) -> i32 {
 }
 
 pub fn greeting(name: &str) -> String {
-    String::from("Hello!")
+    format!("Hello {}!", name)
 }
 
 pub struct Guess {
@@ -95,12 +95,12 @@ impl Guess {
     pub fn new(value: i32) -> Guess {
         if value < 1 {
             panic!(
-		"Guess value must be less than or equal too 100, got {}.",
+		"Guess value must be greater than or equal to 1, got {}.",
 		value
 	    );
         } else if value > 100 {
             panic!(
-		"Guess value must be greater than or equal to 1, got {}.",
+		"Guess value must be less than or equal to 100, got {}.",
 		value
 	    );
 	}
